@@ -1,0 +1,25 @@
+{
+  // Nome do ambiente
+  "name": "n8n on Codespaces",
+
+  // Referência ao nosso arquivo docker-compose
+  "dockerComposeFile": "docker-compose.yml",
+
+  // O serviço que o Codespaces irá usar como o principal
+  "service": "n8n",
+
+  // O diretório de trabalho dentro do contêiner
+  "workspaceFolder": "/home/node/.n8n",
+
+  // Lista de portas para encaminhar automaticamente
+  "forwardPorts": [5678],
+
+  // Extensões úteis para o VS Code no Codespaces
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}

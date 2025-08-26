@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  n8n:
+    # A imagem oficial do n8n no Docker Hub
+    image: n8nio/n8n:latest
+    # Mapeia a porta 5678 do contêiner para a porta 5678 do host
+    # O Codespaces irá usar esta porta para o encaminhamento
+    ports:
+      - 5678:5678
+    # Mapeia um volume para persistir os dados do n8n (fluxos de trabalho, credenciais, etc.)
+    # Isso garante que os teus dados não se percam quando o contêiner for recriado
+    volumes:
+      - n8n_data:/home/node/.n8n
+    # Define variáveis de ambiente para a configuração do n8n
+    environment:
+      # Desativa a autenticação básica por padrão para facilitar o primeiro acesso
+      - N8N_BASIC_AUTH_ACTIVE=false
+      # Habilita o modo de túnel (útil para webhooks)
+      - N8N_HOST=localhost
+
+volumes:
+  # Define o volume para persistência de dados
+  n8n_data:

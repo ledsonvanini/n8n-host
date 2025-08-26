@@ -9,10 +9,9 @@
   "service": "n8n",
 
   // O diretório de trabalho dentro do contêiner
-  "workspaceFolder": "/home/node/.n8n",
-
+  "workspaceFolder": "/workspace",
   // Lista de portas para encaminhar automaticamente
-  "forwardPorts": [5678],
+   "forwardPorts": [5678, 8080],
 
   // Extensões úteis para o VS Code no Codespaces
   "customizations": {
